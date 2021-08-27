@@ -1,5 +1,5 @@
 
-**Note: The origin GoogleCloudPlatform/govanityurls has alreay support running as a standalone server. so I advise you use the origin one. This repo will not be maintained later.
+**Note: The origin GoogleCloudPlatform/govanityurls has already supported to be run as a standalone server and it add more flexible repo matching policies. so I advise you use the origin one. This repo will not be maintained later.
 
 
 # Go Vanity URLs for normal VPS(virtual private server)
