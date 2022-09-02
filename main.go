@@ -49,7 +49,13 @@ func handle(w http.ResponseWriter, r *http.Request) {
 	
 	prefix := "/" + urlList[0]
 	
-	current := r.URL.Path	
+	current := r.URL.Path
+	
+	p, ok := m[prefix]
+	if !ok {
+		http.NotFound(w, r)
+		return
+	}
 	
 	if !strings.HasPrefix(current, prefix) {
 		http.NotFound(w, r)
@@ -62,8 +68,8 @@ func handle(w http.ResponseWriter, r *http.Request) {
 		Display string
 	}{
 		Import:  host + current,
-		Repo:    e.Repo + current,
-		Display: e.Display,
+		Repo:    p.Repo + current,
+		Display: p.Display,
 	}); err != nil {
 		http.Error(w, "cannot render the page", http.StatusInternalServerError)
 	}
