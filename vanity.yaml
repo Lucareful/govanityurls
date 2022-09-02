@@ -1,0 +1,3 @@
+/test:
+      repo: https://xxxxxx:2123
+      vsc: git
