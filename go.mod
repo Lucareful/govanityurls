@@ -1,4 +1,4 @@
-module github.com/bigwhite/govanityurls
+module github.com/Lucareful/govanityurls
 
 go 1.14
 
