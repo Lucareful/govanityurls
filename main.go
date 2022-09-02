@@ -62,7 +62,7 @@ func handle(w http.ResponseWriter, r *http.Request) {
 		Display string
 	}{
 		Import:  host + current,
-		Repo:    p.Repo,
+		Repo:    p.Repo + current,
 		Display: p.Display,
 	}); err != nil {
 		http.Error(w, "cannot render the page", http.StatusInternalServerError)
