@@ -40,9 +40,18 @@ func init() {
 }
 
 func handle(w http.ResponseWriter, r *http.Request) {
-	current := r.URL.Path
-	p, ok := m[current]
-	if !ok {
+	urlList := strings.Split(r.URL.Path, "/")
+	
+	if len(urlList) < 1 {
+		http.NotFound(w, r)
+		return
+	}
+	
+	prefix := "/" + urlList[0]
+	
+	current := r.URL.Path	
+	
+	if !strings.HasPrefix(current, prefix) {
 		http.NotFound(w, r)
 		return
 	}
